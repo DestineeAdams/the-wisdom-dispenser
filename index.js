@@ -5,6 +5,7 @@ const PORT = 5000;
 
 app.set('view engine', 'ejs');
 app.use(express.static('./public'));
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', function (req, res) {
@@ -23,11 +24,14 @@ app.get('/', function (req, res) {
   .catch(error => console.error('Error:', error));
 })
 
-
-app.post('/', (req, res) => {
-  // console.log(req.body)
+/* */
+app.post('/submit-quote', (req, res) => {
+  const { quote, author } = req.body;
+  console.log("Request body:", req.body);
+  console.log("Received quote:", quote, "by", author);
   
-  const uri = genertorEndpoint(req.body.inputQuote, req.body.inputAuthor);
+  
+  const uri = genertorEndpoint(req.body.quote, req.body.author);
   // console.log(uri);
   
   fetch(uri, {
@@ -65,7 +69,11 @@ app.post('/', (req, res) => {
     
   })
   .catch(error => console.error('Error:', error));
+  
+  res.json({ message: "Quote received successfully!", quote, author });
+
 })
+
 
 
 app.listen(PORT, () => {
