@@ -1,30 +1,89 @@
 const express = require('express');
-const { ConnectionCheckOutFailedEvent } = require('mongodb');
 const app = express();
-const { MongoClient, ServerApiVersion } = require('mongodb');
 
-require('dotenv').config();
+const PORT = 5000;
 
-
-app.set('view engine', 'ejs')
-app.use(express.static('public'))
-
-
-const uri = `mongodb+srv://${process.env.mongodbUSERNAME}:${process.env.mongodbPASS}@cluster0.rusjhfg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
-
+app.set('view engine', 'ejs');
+app.use(express.static('./public'));
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/', function (req, res) {
-    res.render('index.ejs')
+
+  fetch('https://wisdomdisperserapi.onrender.com/api/random')
+  .then(
+    response => response.json()
+  )
+  .then(
+    (data) => {
+      // console.log(data[0])      
+      let sellectedQuote = data[0]["quotes"][Math.floor(Math.random() * data[0]["quotes"].length)];       
+      res.render('index.ejs', { "quote": sellectedQuote, "author": data[0]["author"]});
+    }
+  )
+  .catch(error => console.error('Error:', error));
 })
 
-app.listen(process.env.PORT, function () {
-    console.log(`listening on http://localhost:${process.env.PORT}`)
+
+app.post('/', (req, res) => {
+  // console.log(req.body)
+  
+  const uri = genertorEndpoint(req.body.inputQuote, req.body.inputAuthor);
+  // console.log(uri);
+  
+  fetch(uri, {
+    method: 'POST'
+  })
+  .then((response) => {
+    // response.json()
+        
+    if (response.status == 204) {
+      fetch(uri, {
+        method: 'PUT'
+      })
+      .then((response) => {
+          if (response.status == 204) {
+            console.log("quote already in data base PUT if", response.status);
+            res.end();
+
+          }
+          else{
+            console.log("quote add to data base PUT else", response.status);
+            res.end();
+
+
+          }
+
+        }
+      )
+      .catch(error => console.error('Error:', error));
+    } 
+    else {
+    
+      console.log("quote and author add in data base POST else", response.status)
+      res.end();
+    }
+    
+  })
+  .catch(error => console.error('Error:', error));
+})
+
+
+app.listen(PORT, () => {
+    console.log(`listening on http://localhost:${PORT}`)
 })
 
 
 
 
-
+function genertorEndpoint(quote, author) {
+    let endpoint = `api/${quote}/${author}`;
+    let url = `https://wisdomdisperserapi.onrender.com/${endpoint}`;
+    
+    // console.log(endpoint);
+    // console.log(url);
+    
+    return url;
+}
 
 
 

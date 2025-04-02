@@ -2,21 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" type = "text/css" href="/styles.css">
+    <title>The Wisdom dispenser 🦉</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
   </head>
   <body>
-    <h1> The Wisdom disperser ✨</h1>
+    <h1>The Wisdom dispenser 🦉</h1>
     
-    <p id="quote">Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself.</p>
-    <p id="person">Rumi</p>
+    <p id="quote"><%= quote %></p>
+    <p id="person"><%= author %></p>
     
-    <button>👆🏾</button>
-    <button>👇🏾</button>
-    <button>contribute</button>
-    <button>share</button>
-    
-    <a href="#">support</a>
+    <h4>Add a quote</h4>
+    <form method="POST" id="quoteForm">
+      <input type="text" placeholder="Quote" name="inputQuote" id="inputQuote">
+      <input type="text" placeholder="Author" name="inputAuthor" id="inputAuthor">
+      <button id="add" type="submit">Add</button>
+    </form>    
 
 
     <script src="/main.js"></script>
