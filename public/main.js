@@ -18,8 +18,7 @@ document.getElementById('quoteForm').addEventListener('submit', (event) => {
           // console.log("Success:", data);
           
           // lets the user know if what happend
-          document.querySelector('#quote-status').innerText = `✅${data['message']}✅`;
-          
+          document.querySelector('#quote-status').innerText = `${data['message']}`;
           
           note.style.visibility = "visible";
           note.style.color = "red"; 
@@ -27,7 +26,7 @@ document.getElementById('quoteForm').addEventListener('submit', (event) => {
           setTimeout(() => {
             note.style.visibility = "hidden";
             note.style.color = "black"; 
-          }, 2000);
+          }, 3000);
           
       })
       .catch(error => console.error('Error:', error));
