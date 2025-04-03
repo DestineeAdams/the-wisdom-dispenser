@@ -12,7 +12,6 @@ app.get('/', function (req, res) {
 
   res.render('index.ejs', { "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "author": "author"});
 
-/*
   fetch('https://wisdomdisperserapi.onrender.com/api/random')
   .then(
     response => response.json()
@@ -25,7 +24,6 @@ app.get('/', function (req, res) {
     }
   )
   .catch(error => console.error('Error:', error));
-*/
 })
 
 /* */
