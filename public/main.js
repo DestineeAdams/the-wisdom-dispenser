@@ -1,6 +1,5 @@
 console.log("test");
 
-
 document.getElementById('quoteForm').addEventListener('submit', (event) => {
       event.preventDefault(); // Stop the form from redirecting
       

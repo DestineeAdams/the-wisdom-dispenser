@@ -47,13 +47,13 @@ app.post('/submit-quote', (req, res) => {
       .then((response) => {
           if (response.status == 204) {
             console.log(response.status);
-            res.json({message: "quote already in data base!", "status": response.status});
+            res.json({message: "quote was already in the data base!", "status": response.status});
             res.end();
           }
           
           else{
             console.log(response.status);
-            res.json({message: "quote added to data base!", "status": response.status});
+            res.json({message: "quote was added to data base!", "status": response.status});
             res.end();
           }
 
@@ -65,13 +65,14 @@ app.post('/submit-quote', (req, res) => {
     else {
       
       console.log(response.status);
-      res.json({message: "quote and author was added to data base", "status": response.status});
+      res.json({message: "quote and person was added to data base!", "status": response.status});
       res.end();
     }
     
   })
   .catch(error => console.error('Error:', error));
   
+  // res.json({ message: "Quote received successfully!", quote, author });
 
 })
 
