@@ -10,8 +10,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get('/', function (req, res) {
 
-  res.render('index.ejs', { "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "author": "author"});
-
   fetch('https://wisdomdisperserapi.onrender.com/api/random')
   .then(
     response => response.json()
@@ -48,14 +46,14 @@ app.post('/submit-quote', (req, res) => {
       })
       .then((response) => {
           if (response.status == 204) {
-            // console.log(response.status);
-            res.json({message: "❌quote was already in the data base!❌", "status": response.status});
+            console.log(response.status);
+            res.json({message: "quote was already in the data base!", "status": response.status});
             res.end();
           }
           
           else{
-            // console.log(response.status);
-            res.json({message: "✅quote was added to data base!✅", "status": response.status});
+            console.log(response.status);
+            res.json({message: "quote was added to data base!", "status": response.status});
             res.end();
           }
 
@@ -63,18 +61,11 @@ app.post('/submit-quote', (req, res) => {
       )
       .catch(error => console.error('Error:', error));
     } 
-    else if(response.status == 404) {
-      // need to test this case
-      
-      // console.log(response.status);
-      res.json({message: "❌not added try again later❌", "status": response.status});
-      res.end();
-    }
     
     else {
       
-      // console.log(response.status);
-      res.json({message: "✅quote and person was added to data base!✅", "status": response.status});
+      console.log(response.status);
+      res.json({message: "quote and person was added to data base!", "status": response.status});
       res.end();
     }
     
