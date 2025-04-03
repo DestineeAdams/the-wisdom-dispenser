@@ -5,6 +5,7 @@ const PORT = 5000;
 
 app.set('view engine', 'ejs');
 app.use(express.static('./public'));
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', function (req, res) {
@@ -23,11 +24,14 @@ app.get('/', function (req, res) {
   .catch(error => console.error('Error:', error));
 })
 
-
-app.post('/', (req, res) => {
-  // console.log(req.body)
+/* */
+app.post('/submit-quote', (req, res) => {
+  const { quote, author } = req.body;
+  // console.log("Request body:", req.body);
+  // console.log("Received quote:", quote, "by", author);
   
-  const uri = genertorEndpoint(req.body.inputQuote, req.body.inputAuthor);
+  
+  const uri = genertorEndpoint(req.body.quote, req.body.author);
   // console.log(uri);
   
   fetch(uri, {
@@ -42,30 +46,35 @@ app.post('/', (req, res) => {
       })
       .then((response) => {
           if (response.status == 204) {
-            console.log("quote already in data base PUT if", response.status);
+            console.log(response.status);
+            res.json({message: "quote already in data base!", "status": response.status});
             res.end();
-
           }
+          
           else{
-            console.log("quote add to data base PUT else", response.status);
+            console.log(response.status);
+            res.json({message: "quote added to data base!", "status": response.status});
             res.end();
-
-
           }
 
         }
       )
       .catch(error => console.error('Error:', error));
     } 
-    else {
     
-      console.log("quote and author add in data base POST else", response.status)
+    else {
+      
+      console.log(response.status);
+      res.json({message: "quote and author was added to data base", "status": response.status});
       res.end();
     }
     
   })
   .catch(error => console.error('Error:', error));
+  
+
 })
+
 
 
 app.listen(PORT, () => {
