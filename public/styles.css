@@ -29,8 +29,13 @@
 
 #quote-status{
     visibility: hidden;
+    font-size: 1rem;
+    padding: 1rem 0;
 }
 
+html{
+    font-size: 15px;
+}
 
 body{
     
@@ -38,6 +43,9 @@ body{
     color: var(--beige);
     text-align: center;
     
+    width: 50rem;
+    margin: 1rem auto;
+
     
     background-image: url("./magazine-colors-media-page-dithered-image.png");
     background-size: 100%;
@@ -46,19 +54,22 @@ body{
 
 header{
     background-color: var(--ash-black-transparent-transparent);
-    margin: 0 auto;
-    width: 50%;
+    margin: -1.5rem auto;
+    text-align: center;
     
     font-family: AIMT;
 
     text-transform: capitalize;
-    font-size: 2rem;
+    font-size: 2.5rem;
     
     /* border-radius: 1rem; */
 }
 
 h5, p {
-    margin: 0.5rem auto;
+    margin: 0rem auto;
+    font-size: 1.5em;
+    
+    text-transform: capitalize;
 }
 
 #quote{
@@ -80,11 +91,12 @@ article, section, footer{
     
     padding: 1rem 0.5rem;
     margin: 0.5rem auto;
-    width: 50%;
+    width: 35rem;
 }
 
 section > div {
     margin: 0.5rem auto;
+    margin-top: 1.5rem;
     
     display: flex;
     flex-direction: row;
@@ -97,7 +109,11 @@ button {
     color: var(--beige);
     box-shadow: 0 5px #999;
     
+    font-size: 1rem;
     padding: 0.5rem 1.5rem;
+    
+    text-transform: capitalize;
+    font-weight: bold;
 }
 
 button:hover {
@@ -124,13 +140,11 @@ footer {
 } */
 
 main{
-    width: 50%;
     margin: 0 auto;
-    padding: 1% 0;
+    padding: 0.5rem 0;
     background-color: var(--book-yellow-transparent-transparent);
-    /* border-radius: 10px; */
     
-    font: 1em sans-serif;
+    font-family: sans-serif;
 
 }
 
@@ -138,14 +152,35 @@ input{
     background-color: var(--book-dark);
     border: none;
     color: var(--book-pink);
-    padding: 0.5rem 0rem;
+    padding: 1rem 0rem;
     text-align: center;
-    /* border-radius: 1rem; */
-    
+    font-size: 1rem;
+}
+
+#add {
+    margin-top: 1rem;
 }
 
 
 
-#add {
-    margin-top: 1rem;
+@media screen and (max-width: 400px) {
+    html {
+        font-size: 20px;
+    }
+    
+    body {
+        width: 50rem;
+        text-align: center;
+    }
+    
+    header {
+        font-size: 3rem;
+        margin: 0.5rem 3rem;
+    }
+    
+    main {
+        margin: 0 3rem;
+        padding: 3rem 1rem;
+    }
+   
 }

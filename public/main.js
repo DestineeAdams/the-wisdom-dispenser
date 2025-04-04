@@ -21,7 +21,7 @@ document.getElementById('quoteForm').addEventListener('submit', (event) => {
           document.querySelector('#quote-status').innerText = `${data['message']}`;
           
           note.style.visibility = "visible";
-          note.style.color = "red"; 
+          note.style.color = "#6cffb9"; 
          
           setTimeout(() => {
             note.style.visibility = "hidden";
