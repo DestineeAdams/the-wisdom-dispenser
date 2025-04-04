@@ -1,5 +1,5 @@
 # The-wisdom-dispenser
-fullstack web app that allows you the receive and share wisdon with random strangers on the internet
+Full-stack web app that allows you to receive and share wisdom with random strangers on the internet
 
 ![demo gif](https://semii.space/files/TheWisdomDispenser.gif)
 
