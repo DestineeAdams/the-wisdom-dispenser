@@ -7,7 +7,7 @@ A full-stack web app that allows you to receive and share wisdom with random str
 
 **related projects**: https://wisdomdisperserapi.onrender.com
 
-Tech used: JavaScript, node.js, express, dotenv, ejs
+Tech used: JavaScript, node.js, express, dotenv, ejs, api
 
 ## Optimizations
 
