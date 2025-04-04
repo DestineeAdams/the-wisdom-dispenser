@@ -1,12 +1,29 @@
 const express = require('express');
 const app = express();
+const https = require('https');
 
-const PORT = 5000;
+require('dotenv').config();
+
+
+const port = process.env.PORT || 4000;
 
 app.set('view engine', 'ejs');
 app.use(express.static('./public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+
+
+function genertorEndpoint(quote, author) {
+  let endpoint = `api/${quote}/${author}`;
+  let url = `https://wisdomdisperserapi.onrender.com/${endpoint}`;
+  
+  // console.log(endpoint);
+  // console.log(url);
+  
+  return url;
+}
+
 
 app.get('/', function (req, res) {
 
@@ -78,22 +95,12 @@ app.post('/submit-quote', (req, res) => {
 
 
 
-app.listen(PORT, () => {
-    console.log(`listening on http://localhost:${PORT}`)
+app.listen(port, () => {
+    console.log(`listening on http://localhost:${port}`)
 })
 
 
 
-
-function genertorEndpoint(quote, author) {
-    let endpoint = `api/${quote}/${author}`;
-    let url = `https://wisdomdisperserapi.onrender.com/${endpoint}`;
-    
-    // console.log(endpoint);
-    // console.log(url);
-    
-    return url;
-}
 
 
 
