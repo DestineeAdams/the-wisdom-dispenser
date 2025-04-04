@@ -1,7 +1,9 @@
 # The-wisdom-dispenser
 fullstack web app that allows you the receive and share wisdon with random strangers on the internet
 
-see project running here: https://the-wisdom-dispenser.onrender.com
+**see project running here**: https://the-wisdom-dispenser.onrender.com
+
+**related projects**: https://wisdomdisperserapi.onrender.com
 
 Tech used: JavaScript, node.js, express, dotenv, ejs
 
