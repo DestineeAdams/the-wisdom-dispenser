@@ -149,7 +149,7 @@ main{
 }
 
 input{
-    background-color: var(--book-dark);
+    background-color: var(--beige);
     border: none;
     color: var(--book-pink);
     padding: 1rem 0rem;
