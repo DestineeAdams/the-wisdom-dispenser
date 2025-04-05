@@ -4,7 +4,7 @@ A full-stack web app that allows you to receive and share wisdom with random str
 ![demo gif](https://github.com/DestineeAdams/portfolio-Website/blob/main/files/TheWisdomDispenser.gif?raw=true)
 
 **see project running here**: https://the-wisdom-dispenser.onrender.com ✨
-***note: project it hosted on a free render account so is may take a minute or two to load***
+***note: project is hosted on a free render account so is may take a minute or two to load***
 
 **related projects**: https://wisdomdisperserapi.onrender.com
 
