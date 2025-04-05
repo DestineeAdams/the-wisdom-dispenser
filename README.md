@@ -1,5 +1,5 @@
 # The-wisdom-dispenser
-A full-stack web app that allows you to receive and share wisdom with random strangers on the internet. It uses a custom API I also built, check out the API [here](https://github.com/DestineeAdams/WisdomDisperserAPI)
+A full-stack web app where users can receive and share anonymous wisdom. Gets data form the [The Wisdom Dispenser API](https://wisdomdisperserapi.onrender.com) _*which I also made_
 
 ![demo gif](https://github.com/DestineeAdams/portfolio-Website/blob/main/files/TheWisdomDispenser.gif?raw=true)
 
