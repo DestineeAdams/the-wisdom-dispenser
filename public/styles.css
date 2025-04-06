@@ -300,7 +300,7 @@ input,textarea{
 } */
 
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px){
     
     #quote-status{
         font-size: 1.5rem;
@@ -314,4 +314,25 @@ input,textarea{
         font-size: 1.5rem;
     }
 }
+
+
+@media (min-width: 1024px) and (max-width: 2560px){
+    html{
+        font-size: 22px;
+    }
+    
+    #add {
+        margin-top: 0rem;
+    }
+    
+    button{
+        font-size: 2rem;
+    }
+    h1{
+        font-size: 4rem;
+    }
+    
+}
+
+
 
