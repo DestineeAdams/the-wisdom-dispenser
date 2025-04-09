@@ -9,6 +9,8 @@
 
 --book-dark: #351990;
 --book-pink: #fe3199;
+--book-pink-dark: #cf267b;
+
 
 --ash-grape: #a3629e;
 
@@ -18,6 +20,7 @@
 
 --beige: #eff6e0ff;
 --ash-black: #2c2c2c;
+--ash-black-transparent: #2c2c2c5e;
 --ash-black-transparent-transparent: #2c2c2c34;
 
 }
@@ -29,12 +32,13 @@
 
 #quote-status{
     visibility: hidden;
-    font-size: 1rem;
-    padding: 1rem 0;
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    margin: 0;
 }
 
 html{
-    font-size: 15px;
+    font-size: 16px;
 }
 
 body{
@@ -43,296 +47,117 @@ body{
     color: var(--beige);
     text-align: center;
     
-    width: 50rem;
-    margin: 1rem auto;
-    /* padding-bottom: 2rem; */
-
-    
     background-image: url("./magazine-colors-media-page-dithered-image.png");
     background-size: 100%;
-}
-
-
-header{
-    background-color: var(--ash-black-transparent-transparent);
-    margin: -1.5rem auto;
-    text-align: center;
     
-    font-family: AIMT;
-
-    text-transform: capitalize;
-    /* border-radius: 1rem; */
-}
-
-h1{
-    font-size: 3rem;
-}
-
-h5, p {
-    margin: 0rem auto;
-    font-size: 1.5em;
-    
-    text-transform: capitalize;
-}
-
-#quote{
-    font-weight: bold;
-}
-
-#person {
-    font-style: italic;
-}
-
-article, section, footer{
-    font-size: 1.5rem;
-    background-color: var(--ash-black-transparent-transparent);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-    padding: 1rem 0.5rem;
-    margin: 0.5rem auto;
-    width: 35rem;
-}
-
-section > div {
-    margin: 0.5rem auto;
-    margin-top: 1.5rem;
-    
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-}
-
-button {
-    background-color: var(--book-pink);
-    border: none;
-    color: var(--beige);
-    box-shadow: 0 5px #999;
-    
-    font-size: 3rem;
-    padding: 0.5rem 1.5rem;
-    
-    text-transform: capitalize;
-    font-weight: bold;
-}
-
-button:hover {
-    background-color: var(--book-green);
-}
-
-button:active {
-    background-color: var(--dark-book-green);
-    transform: translateY(4px);
-    box-shadow: 0 2px #666;
+    padding: 0 1.5rem;
 
 }
 
-
-footer {
-    display: flex;
-    flex-direction: row;
-    
-    column-gap: 1rem;
+header, footer{
+    font: 2rem AIMT;
+    background-color: var(--ash-black-transparent-transparent) ;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
 }
 
-/* #ratings{
-
-} */
+h1, h3{
+    padding: 0;
+    margin: 0rem;
+}
 
 main{
-    margin: 0 auto;
-    padding: 0.5rem 0;
-    background-color: var(--book-yellow-transparent-transparent);
+    font: 1.5rem sans-serif;
+    background-color: var(--ash-black-transparent-transparent);
     
-    font-family: sans-serif;
+    padding: 1.5rem;
+}
+
+
+section {
+    padding-top: 1rem;
+    border-top: medium dashed  var(--book-yellow);
 
 }
 
-input,textarea{
-    background-color: var(--beige);
-    border: none;
-    color: var(--book-pink);
-    padding: 1rem 1rem;
-    text-align: left;
-    font-size: 2rem;
-}
 
-#add {
-    margin-top: 3rem;
-}
-
-#quoteForm{
+section form {
     display: flex;
     flex-direction: column;
-    row-gap: 5px;
+    row-gap: 0.2rem;
+
+    width: 14rem;
+    margin: 0 auto;
 }
 
-@media screen and (max-width: 592px)  {
-    html {
-        font-size: 20px;
-    }
+section form button{
+    margin: 1rem 0;
+}
+
+button{
+    padding: 0.2rem 1rem;
+    font-size: 0.5em;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: var(--book-pink);
+    border: none;
+    border-radius: 0.2rem;
+    box-shadow: 0 0.5rem #999;
+    font-weight: bolder;
+}
+
+.button:hover {
+    background-color: var(--book-pink-dark);
+}
+
+.button:active {
+  background-color: var(--book-pink-dark);
+  box-shadow: 0 1rem #666;
+  transform: translateY(4px);
+}
+
+
+textarea, input {
+    background-color: var(--beige);
+    border: solid 0.2rem var(--ash-black-transparent);
+    border-radius: 0.2rem;
     
-    #quote-status {
-        font-size: 3rem;
-        padding: 1rem 0;
     
-    }
-    
-    #quoteForm{
-        row-gap: 5px;
-    
-    }
-    
-    #add {
-        /* margin-top: -3rem; */
-    }
-    
+}
+
+/* media queries */
+
+@media all and (min-width: 1024px){
     body {
-        width: 50rem;
-        text-align: center;
-    }
-    
-    header {
-        margin: 0.5rem 2.5rem;
-    }
-    
-    h1{
-        font-size: 7rem;
-    }
-    
-    h5{
-        font-size: 1em;
-    }
-    main {
+        width: 45rem;
         margin: 0 auto;
-        padding: 3rem 1rem;
-        width: 90%;
     }
     
-    article, section, footer{
-        font-size: 3rem;
-        width: 14em;
+    section form {
+        width: 20rem;
+    }
 
-    }
-    
-    body{
-        background-image: url("./magazine-colors-media-page-dithered-image.png");
-        background-size: cover;
-    }
 }
 
 
-@media (min-width: 592px) and (max-width: 768px) {
-    html {
-        font-size: 20px;
-    }
-    
-    #quote-status {
-        font-size: 1rem;
-        padding: 1rem 0;
-    
-    }
-    
-    #quoteForm{
-        row-gap: 10px;
-    
-    }
-    
-    #add {
-        margin-top: 1rem;
-    }
-    
+@media all and (min-width: 1024px) and (max-width: 1280px) {
     body {
-        width: 50rem;
-        text-align: center;
-    }
-    
-    header {
-        margin: 0.5rem 2.5rem;
-    }
-    
-    h1{
-        font-size: 5rem;
-    }
-    
-    h5{
-        font-size: 1em;
-    }
-    main {
+        width: 45rem;
         margin: 0 auto;
-        padding: 3rem 1rem;
-        width: 90%;
     }
     
-    article, section, footer{
-        font-size: 2rem;
-        width: 22em;
+    section form {
+        width: 20rem;
+    }
 
-    }
-    
-    body{
-        background-image: url("./magazine-colors-media-page-dithered-image.png");
-        background-size: cover;
-    }
-    
-    input, textarea{
-        font-size: 1.5rem;
-    }
-    
-    form #add{
-        font-size: 1rem;
-    }
-    
-    button{
-        font-size: 1.5rem;
-    }
 }
 
-
-/* @media (min-width: 768px) and (max-width: 1024px) {
-
-    button{
-        font-size: 1.5rem;
+@media all and (max-width: 320px) {
+    section form{
+        width: 10rem;
     }
-} */
 
-
-@media (min-width: 768px) and (max-width: 1024px){
-    
-    #quote-status{
-        font-size: 1.5rem;
-    }
-    
-    h1{
-        font-size: 5rem;
-    }
-    
-    button{
-        font-size: 1.5rem;
-    }
 }
-
-
-@media (min-width: 1024px) and (max-width: 2560px){
-    html{
-        font-size: 22px;
-    }
-    
-    #add {
-        margin-top: 0rem;
-    }
-    
-    button{
-        font-size: 2rem;
-    }
-    h1{
-        font-size: 4rem;
-    }
-    
-}
-
-
 
