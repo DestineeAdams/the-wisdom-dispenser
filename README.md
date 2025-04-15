@@ -29,3 +29,7 @@ link to images below and i put a dither filter on it with doodad
 [background abstract color purple](https://pixabay.com/illustrations/background-abstract-color-purple-7276646/)
 [magazine colors media page](https://pixabay.com/photos/magazine-colors-media-page-806073/)
 [dither-me-this](https://doodad.dev/dither-me-this/)
+
+
+### todo
+- [ ] add button hover effects
