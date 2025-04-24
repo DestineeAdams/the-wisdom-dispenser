@@ -123,8 +123,10 @@ textarea, input {
     background-color: var(--beige);
     border: solid 0.2rem var(--ash-black-transparent);
     border-radius: 0.2rem;
-    
-    
+}
+
+#person {
+    margin-top: 0%;
 }
 
 /* media queries */
