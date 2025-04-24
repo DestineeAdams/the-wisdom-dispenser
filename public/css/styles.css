@@ -17,6 +17,7 @@
 --book-yellow: #f5e961;
 --book-yellow-transparent-transparent: #f5e9615c;
 
+--book-grape: #351990;
 
 --beige: #eff6e0ff;
 --ash-black: #2c2c2c;
@@ -27,7 +28,7 @@
 
 @font-face {
     font-family: AIMT;
-    src: url('./Always In My Heart.ttf');
+    src: url('/fonts/Always In My Heart.ttf');
 }
 
 #quote-status{
@@ -47,7 +48,7 @@ body{
     color: var(--beige);
     text-align: center;
     
-    background-image: url("./magazine-colors-media-page-dithered-image.png");
+    background-image: url("/images/magazine-colors-media-page-dithered-image.png");
     background-size: 100%;
     
     padding: 0 1.5rem;
@@ -108,14 +109,14 @@ button{
     font-weight: bolder;
 }
 
-.button:hover {
-    background-color: var(--book-pink-dark);
+button:hover {
+    background-color: var(--book-grape);
 }
 
-.button:active {
+button:active {
   background-color: var(--book-pink-dark);
-  box-shadow: 0 1rem #666;
-  transform: translateY(4px);
+  box-shadow: 0 5px #666;
+  transform: translateY(3px);
 }
 
 

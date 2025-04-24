@@ -80,7 +80,6 @@ app.post('/submit-quote', (req, res) => {
     } 
     
     else {
-      
       console.log(response.status);
       res.json({message: "quote and person was added to data base!", "status": response.status});
       res.end();
