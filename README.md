@@ -11,15 +11,6 @@ A full-stack web app where users can receive and share anonymous wisdom. It gets
 **Tech used**: JavaScript, Node.js, Express, dotenv, EJS, API, Mongodb
 
 ## Optimizations
-
-- Need a feature to flag offensive content.  
-- Below are three different sentences, grammatically speaking but, they all convey the same idea, call them **info duplicates**. I want to avoid having info duplicates entered into the database
-  
-  "add button hover", "add button hover", "Add button hover."
-  
-  - **Idea One:** Write a function that removes all white space and punctuation from the quote and author in the user input. Do the same with every enties in the database (sorted alphabetically), and check if that quote already exists.
-  - **Idea Two:** use this [npm package](https://www.npmjs.com/package/string-similarity-js) 
-  - 
 - Add Mongoose
 - Add MVC structure 
 
