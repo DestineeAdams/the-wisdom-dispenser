@@ -1,5 +1,5 @@
 # The-Wisdom-Dispenser  
-A full-stack web app where users can receive and share anonymous wisdom. It gets data from the [The Wisdom Dispenser API](https://wisdomdisperserapi.onrender.com) _*which I also made*_
+Web-app that displays a random quote from a database and allows the user to add a quote to the database. Gets data from the [The Wisdom Dispenser API](https://wisdomdisperserapi.onrender.com) _*which I also made*_
 
 ![demo gif](https://github.com/DestineeAdams/portfolio-Website/blob/main/files/TheWisdomDispenser.gif?raw=true)
 
