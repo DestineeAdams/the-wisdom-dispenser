@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const https = require('https');
 
 require('dotenv').config();
 
@@ -17,10 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 function genertorEndpoint(quote, author) {
   let endpoint = `api/${quote}/${author}`;
   let url = `https://wisdomdisperserapi.onrender.com/${endpoint}`;
-  
-  // console.log(endpoint);
-  // console.log(url);
-  
+    
   return url;
 }
 
@@ -33,8 +29,8 @@ app.get('/', function (req, res) {
   )
   .then(
     (data) => {
-      // console.log(data[0])      
-      let sellectedQuote = data[0]["quotes"][Math.floor(Math.random() * data[0]["quotes"].length)];       
+      // adds quote to the database
+      let sellectedQuote = data[0]["quotes"][Math.floor(Math.random() * data[0]["quotes"].length)];      
       res.render('index.ejs', { "quote": sellectedQuote, "author": data[0]["author"]});
     }
   )
@@ -44,18 +40,14 @@ app.get('/', function (req, res) {
 /* */
 app.post('/submit-quote', (req, res) => {
   const { quote, author } = req.body;
-  // console.log("Request body:", req.body);
-  // console.log("Received quote:", quote, "by", author);
-  
+
   
   const uri = genertorEndpoint(req.body.quote, req.body.author);
-  // console.log(uri);
   
   fetch(uri, {
     method: 'POST'
   })
   .then((response) => {
-    // response.json()
         
     if (response.status == 204) {
       fetch(uri, {
@@ -64,6 +56,8 @@ app.post('/submit-quote', (req, res) => {
       .then((response) => {
           if (response.status == 204) {
             console.log(response.status);
+            
+            
             res.json({message: "quote was already in the data base!", "status": response.status});
             res.end();
           }
@@ -88,8 +82,6 @@ app.post('/submit-quote', (req, res) => {
   })
   .catch(error => console.error('Error:', error));
   
-  // res.json({ message: "Quote received successfully!", quote, author });
-
 })
 
 

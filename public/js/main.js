@@ -1,7 +1,5 @@
-console.log("test");
-
 document.getElementById('quoteForm').addEventListener('submit', (event) => {
-      event.preventDefault(); // Stop the form from redirecting
+      event.preventDefault(); // stops the form from redirecting
       
       let quote = document.getElementById("inputQuote").value;
       let author = document.getElementById("inputAuthor").value;
@@ -15,18 +13,19 @@ document.getElementById('quoteForm').addEventListener('submit', (event) => {
       })
       .then(response => response.json())
       .then(data => {
-          // console.log("Success:", data);
           
-          // lets the user know if what happend
-          document.querySelector('#quote-status').innerText = `${data['message']}`;
+            // lets the user know if what happend
+            document.querySelector('#quote-status').innerText = `${data['message']}`;
           
-          note.style.visibility = "visible";
-          note.style.color = "#6cffb9"; 
+            note.style.visibility = "visible";
+            note.style.color = "#6cffb9"; 
+   
          
-          setTimeout(() => {
-            note.style.visibility = "hidden";
-            note.style.color = "black"; 
-          }, 3000);
+            //hides message after a few seconds
+            setTimeout(() => {
+                  note.style.visibility = "hidden";
+                  note.style.color = "black"; 
+            }, 3000);
           
       })
       .catch(error => console.error('Error:', error));
