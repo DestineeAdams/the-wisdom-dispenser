@@ -18,9 +18,6 @@ Web-app that displays a random quote from a database and allows the user to add 
 ### Font resource  
 [Always in My Heart FONT](https://www.1001freefonts.com/always-in-my-heart.font) made by [Vanessa Bays](http://bythebutterfly.com)
 
-### Photo  
+### Photo  resource
 Links to images below; I added a dither filter with Doodad:
 [Background abstract color purple](https://pixabay.com/illustrations/background-abstract-color-purple-7276646/), [Magazine colors media page](https://pixabay.com/photos/magazine-colors-media-page-806073/), [Dither Me This](https://doodad.dev/dither-me-this/)
-
-### TODO
-- [ ] Add button hover effects
